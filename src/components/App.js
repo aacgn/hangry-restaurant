@@ -9,7 +9,6 @@ class App extends Component {
     super(props);
     this.state = {
       isSideMenuVisible: false,
-      userName: 'Burguer King',
       data: {
         orders: [],
         restaurant: {}

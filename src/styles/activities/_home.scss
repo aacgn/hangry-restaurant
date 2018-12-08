@@ -1,14 +1,11 @@
 .home {
-    
-    &:after {
-        content: "";
-        background: #fe5722;
-        position: absolute;
-        z-index: -1;
-        width: 140%;
-        height: 20rem;
-        border-radius: 50%;
-        left: -18%;
-        top: 0;
+    &__order-list-view {
+        display: flex;
+        flex-flow: column nowrap;
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
     }
 }

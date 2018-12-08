@@ -25,20 +25,21 @@ body {
             width: 70px;
         }
 
-        &-user-name{
+        &-restaurant-name{
             font-size: 0.7rem;
             color: white;
             margin: 1rem;
         }
 
-        &-user-image{
+        &-restaurant-image{
             border-radius: 50%;
             width: 40px;
+            height: 40px;
         }
     }
 
     &__section {
-        margin-top: .2rem;
+        margin-top: 5rem;
 
         .padded {
             padding: 1.2rem;
@@ -56,7 +57,7 @@ body {
 
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     h2 {
