@@ -12,6 +12,7 @@ class App extends Component {
       userName: 'Burguer King',
       data: {
         orders: [],
+        restaurant: {}
       }
     }
 
