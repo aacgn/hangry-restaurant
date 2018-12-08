@@ -59,6 +59,24 @@
         font-weight: lighter;
     }
 
+    &__action{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    &__btn{
+        background: none;
+        font-family: Gotham;
+        font-size: 0.7rem;
+        color: #f05437;
+        border-radius: 6px;
+        padding: 10px;
+        font-weight: normal;
+    }
+
     &__angle {
         font-size: 1.4rem;
     }

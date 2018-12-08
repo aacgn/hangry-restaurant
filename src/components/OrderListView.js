@@ -3,11 +3,13 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import { faFistRaised } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { faBan } from '@fortawesome/free-solid-svg-icons';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import MealListView from './MealListView.js';
+import { Link } from 'react-router-dom';
 
 export default class OrderListView extends React.Component {
     constructor(props) {
@@ -16,7 +18,8 @@ export default class OrderListView extends React.Component {
             meals: []
         }
 
-        this.handleClick = this.handleClick.bind(this);
+        this.addOrderToCollapse = this.addOrderToCollapse.bind(this);
+        this.changeStatus = this.changeStatus.bind(this);
         this.orderIcon = this.orderIcon.bind(this);
         this.color = this.color.bind(this);
     }
@@ -33,17 +36,20 @@ export default class OrderListView extends React.Component {
         });
   }
 
-    handleClick() {
+    addOrderToCollapse() {
         this.props.addOrderToCollapse(this.props.id, this.props.active);
-        console.log("click1")
+    }
+
+    changeStatus(status){
+        this.props.changeStatus(this.props.id, status);
     }
 
     orderIcon() {
         switch(this.props.status) {
             case 'Pedido':
                 return <FontAwesomeIcon icon={faCreditCard} />;
-            case 'Em preperado':
-                return <FontAwesomeIcon icon={faFistRaised} />;
+            case 'Em preparo':
+                return <FontAwesomeIcon icon={faSpinner} />;
             case 'Cancelado':
                 return <FontAwesomeIcon icon={faBan} />;
             case 'Pronto':
@@ -73,8 +79,8 @@ export default class OrderListView extends React.Component {
             <div className="order-list" style={{
                 borderBottomColor: this.color(),
                 borderBottomWidth: 3
-                }} onClick={() => this.handleClick()}>
-                <div className="order-list__header">
+                }}>
+                <div className="order-list__header" onClick={() => this.addOrderToCollapse()}>
                     <div className="order-list__image">
                         {this.orderIcon()}
                     </div>
@@ -101,7 +107,11 @@ export default class OrderListView extends React.Component {
                         </div>
                     </div>
                     <div className="order-list__angle">
-                        <FontAwesomeIcon icon={faAngleDown} />
+                    {
+                        this.props.active?
+                        <FontAwesomeIcon icon={faAngleUp} />:<FontAwesomeIcon icon={faAngleDown} />
+                    }
+                        
                     </div>  
                 </div>
                 <div className="order-list__content" active={this.props.active.toString()}>
@@ -116,6 +126,17 @@ export default class OrderListView extends React.Component {
                                                 />
                         })
                     }
+                    <div className="order-list__action">
+                        <div className="order-list__btn" onClick={() => this.changeStatus('Cancelado')}>
+                                Cancelar
+                            </div>
+                        <div className="order-list__btn" onClick={() => this.changeStatus('Em preparo')}>
+                            Em preparo
+                        </div>
+                        <div className="order-list__btn" onClick={() => this.changeStatus('Pronto')}>
+                            Pronto
+                        </div>
+                    </div>
                 </div>
                 </div>:<div><h2>Nenhum pedido encontrado.</h2></div>
         );

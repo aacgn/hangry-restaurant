@@ -12,6 +12,7 @@ export default class Home extends Component {
       orders: []
     }
     this.addOrderToCollapse = this.addOrderToCollapse.bind(this);
+    this.changeStatus = this.changeStatus.bind(this);
   }
 
   componentDidMount() {
@@ -61,6 +62,20 @@ export default class Home extends Component {
     console.log(this.state);
   }
 
+  changeStatus(orderId, status){
+    let req = {
+        url: `https://hangry-api.herokuapp.com/order/${orderId}`,
+        method: 'PUT',
+        data: {
+            "status": status
+        }
+    }
+    axios(req).then(response => {
+      this.componentDidMount();
+      this.forceUpdate();
+    });
+}
+
   render() {
     return (
       <div className="activity home">
@@ -90,6 +105,7 @@ export default class Home extends Component {
                                       status = {order.status}
                                       active={this.state.orders.includes(order._id)}
                                       addOrderToCollapse={(orderId, active) => this.addOrderToCollapse(orderId, active)}
+                                      changeStatus={(orderId, status) => this.changeStatus(orderId, status)}
                                       />
             })
           }
