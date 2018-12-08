@@ -11,47 +11,4 @@
         left: -18%;
         top: 0;
     }
-   
-    &__restaurants {
-        padding: 0 1.2rem; 
-        display: flex;
-        flex-flow: row nowrap;
-        overflow-x: scroll;
-
-        .restaurant-card__outer:last-child {
-            padding-right: 0.5rem;
-        }
-
-        &::-webkit-scrollbar {
-            width: 0;
-        }
-         
-         
-        &::-webkit-scrollbar-thumb {
-            width: 0;
-        }
-    }
-
-    &__rest-list-view {
-        display: flex;
-        flex-flow: column nowrap;
-
-        a {
-            color: #000;
-            text-decoration: none;
-        }
-    }
-
-    &__category-list {
-        display: flex;
-        flex-flow: row wrap;
-
-        :nth-child(odd) {
-            margin-right: 3px;
-        }
-    
-        :nth-child(even) {
-            margin-left: 3px;
-        }
-    }
 }

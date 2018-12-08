@@ -1,8 +1,11 @@
-
 @import 'reset';
 @import 'fonts';
 @import 'main';
 @import 'colors';
+
+//Components
+@import 'components/header';
+@import 'components/header-item';
 
 // Activities
 @import 'activities/home';

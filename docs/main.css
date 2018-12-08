@@ -68,7 +68,7 @@ body {
 .activity {
   position: relative;
   overflow: hidden;
-  padding: 4rem 0 6rem 0; }
+  padding: 0rem; }
   .activity__header {
     padding: 10px 18px;
     display: flex;
@@ -77,6 +77,9 @@ body {
     align-items: center; }
     .activity__header-logo {
       width: 80px; }
+    .activity__header-user {
+      border-radius: 50%;
+      width: 50px; }
   .activity__section {
     margin-top: .2rem; }
     .activity__section .padded {
@@ -91,6 +94,18 @@ body {
     font-size: 1.6rem;
     font-weight: lighter; }
 
+.header {
+  background: #fe5722;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%; }
+
+.header-item {
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.4rem; }
+
 .home:after {
   content: "";
   background: #fe5722;
@@ -101,33 +116,6 @@ body {
   border-radius: 50%;
   left: -18%;
   top: 0; }
-
-.home__restaurants {
-  padding: 0 1.2rem;
-  display: flex;
-  flex-flow: row nowrap;
-  overflow-x: scroll; }
-  .home__restaurants .restaurant-card__outer:last-child {
-    padding-right: 0.5rem; }
-  .home__restaurants::-webkit-scrollbar {
-    width: 0; }
-  .home__restaurants::-webkit-scrollbar-thumb {
-    width: 0; }
-
-.home__rest-list-view {
-  display: flex;
-  flex-flow: column nowrap; }
-  .home__rest-list-view a {
-    color: #000;
-    text-decoration: none; }
-
-.home__category-list {
-  display: flex;
-  flex-flow: row wrap; }
-  .home__category-list :nth-child(odd) {
-    margin-right: 3px; }
-  .home__category-list :nth-child(even) {
-    margin-left: 3px; }
 
 
 /*# sourceMappingURL=main.css.map*/
