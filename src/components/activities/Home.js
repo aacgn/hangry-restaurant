@@ -14,16 +14,6 @@ export default class Home extends Component {
     }
   }
 
-  componentDidMount() {
-    axios.get('https://hangry-api.herokuapp.com/')
-         .then((data) => {
-            this.props.setStore({
-              data: {
-                data
-              }
-            })
-    });
-  }
   render() {
     return (
       <div className="activity home">
@@ -33,7 +23,8 @@ export default class Home extends Component {
             <img className="activity__header-logo" src={Logo} />
             </HeaderItem>
             <HeaderItem>
-            <img className="activity__header-user" src={User} />
+              <div className="activity__header-user-name">Hangryrestaurant</div>
+              <img className="activity__header-user-image" src={User} />
             </HeaderItem>
           </div>
         </Header>
