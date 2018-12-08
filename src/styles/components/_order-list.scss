@@ -5,6 +5,7 @@
     flex-flow: row nowrap;
     background: white;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     padding: 12px;
     margin-bottom: .5rem;
@@ -21,7 +22,7 @@
         justify-content: center;
     }
 
-    &__info {
+    &__details {
         display: flex;
         flex-flow: column nowrap;
         flex: 1;
@@ -32,8 +33,19 @@
         margin-bottom: 3px;
     }
 
+    &__info {
+        display: flex;
+        flex-flow: row nowrap;
+        flex: 1;
+    }
+
+    &__price{
+        color: #48D548;
+        font-weight: bold;
+    }
+
     &__data {
-        font-size: .8rem;
+        margin-left: 0.3rem;
         font-weight: lighter;
     }
 

@@ -12,6 +12,7 @@ export default class OrderListView extends React.Component {
     constructor(props) {
         super(props);
         this.orderIcon = this.orderIcon.bind(this);
+        this.color = this.color.bind(this);
     }
 
     orderIcon() {
@@ -27,23 +28,43 @@ export default class OrderListView extends React.Component {
             default:
                 return <FontAwesomeIcon icon={faQuestion} />;
         }
-    }   
+    }
+    
+    color() {
+        switch(this.props.multiplier) {
+            case 0.95:
+                return '#4caf50';
+            case 1.1:
+                return '#FF9800';
+            case 1.15:
+                return '#ff5500';
+            default:
+                return '#7faf4c';
+        }
+    }
 
     render(){
         return ( 
-            <div className="order-list">
+            <div className="order-list"  style={{
+                                borderBottomColor: this.color(),
+                                borderBottomWidth: 3
+                                }}>
                 <div className="order-list__image">
                     {this.orderIcon()}
                 </div>
-                <div className="order-list__info">
+                <div className="order-list__details">
                     <div className="order-list__name">
-                        { this.props.name }
+                            { (this.props.name).substr(0,6) }
                     </div>
-                    <div className="order-list__data">
-                        { "R$" + ((this.props.total_price/100)*this.props.multiplier).toFixed(2) + " • " + this.props.from + "h às " + this.props.to + "h"}
+                    <div className="order-list__info">
+                        <div className="order-list__price">
+                            {"R$" + ((this.props.total_price/100)*this.props.multiplier).toFixed(2)}
+                        </div>
+                        <div className="order-list__data">
+                            {"- " + this.props.from + "h às " + this.props.to + "h"}
+                        </div>
                     </div>
                 </div>
-            
                 <div className="order-list__angle">
                     <FontAwesomeIcon icon={faAngleDown} />
                 </div>  
