@@ -51,7 +51,7 @@ export default class Home extends Component {
             <img className="activity__header-logo" src={HangryLogo} />
             </HeaderItem>
             <HeaderItem>
-              <div className="activity__header-restaurant-name">{'Olá, ' + this.props.store.data.restaurant.name + '.'}</div>
+              <div className="activity__header-restaurant-name">{'Olá, ' +(this.props.store.data.restaurant.name || "") + '.'}</div>
               <img className="activity__header-restaurant-image" src={this.props.store.data.restaurant.image_url} />
             </HeaderItem>
           </div>
