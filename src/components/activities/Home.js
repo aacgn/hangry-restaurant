@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../Header.js';
 import HangryLogo from '../../images/splash_logo.png';
-import RestaurantImage from '../../images/flat-restaurant-with-lampposts_23-2147539585.jpg';
 import HeaderItem from '../HeaderItem.js';
 import OrderListView from '../OrderListView.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      orders: []
     }
+    this.addOrderToCollapse = this.addOrderToCollapse.bind(this);
   }
 
   componentDidMount() {
@@ -42,6 +41,26 @@ export default class Home extends Component {
         })
   }
 
+  addOrderToCollapse(orderId, alreadyCollapse) {
+    if(!alreadyCollapse){
+      let orders = this.state.orders;
+      orders.push(orderId)
+      this.setState({
+        ...this.state,
+        orders
+      })
+    }else {
+      const index = this.state.orders.indexOf(orderId);
+      let orders = this.state.orders;
+      orders.splice(index,1);
+      this.setState({
+        ...this.state,
+        orders
+      })
+    }
+    console.log(this.state);
+  }
+
   render() {
     return (
       <div className="activity home">
@@ -64,12 +83,13 @@ export default class Home extends Component {
             this.props.store.data.orders.map(order => {
               return <OrderListView key={order._id}
                                       id={order._id}
-                                      name={ order._id }
                                       from = {order.from_timestamp}
                                       to = {order.to_timestamp}
                                       total_price={order.total_price}
                                       multiplier={order.multiplier}
                                       status = {order.status}
+                                      active={this.state.orders.includes(order._id)}
+                                      addOrderToCollapse={(orderId, active) => this.addOrderToCollapse(orderId, active)}
                                       />
             })
           }
