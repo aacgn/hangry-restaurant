@@ -1,0 +1,127 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*** Gotham **/
+@font-face {
+  font-family: Gotham;
+  font-weight: 300;
+  src: url(fonts/GothamLight-3f6969ada534de188f1956dd87359296.otf); }
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 500;
+  src: url(fonts/GothamMedium-77171d8f5b5283f9d47a3434704bf944.ttf); }
+
+@font-face {
+  font-family: Gotham;
+  font-weight: 700;
+  src: url(fonts/GothamBold-14b3a355f612d6181e891efd2c798b5f.otf); }
+
+html, body, #root {
+  width: 100%;
+  height: 100%; }
+
+body {
+  font-family: Gotham;
+  font-weight: 500;
+  font-size: 14px; }
+
+.activity {
+  position: relative;
+  overflow: hidden;
+  padding: 0rem; }
+  .activity__header {
+    padding: 10px 18px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center; }
+    .activity__header-logo {
+      width: 70px; }
+    .activity__header-user-name {
+      font-size: 0.7rem;
+      color: white;
+      margin: 1rem; }
+    .activity__header-user-image {
+      border-radius: 50%;
+      width: 40px; }
+  .activity__section {
+    margin-top: .2rem; }
+    .activity__section .padded {
+      padding: 1.2rem; }
+    .activity__section .padded-x {
+      padding: 0 1.2rem; }
+    .activity__section .padded-y {
+      padding: 1.2rem 0; }
+  .activity h1 {
+    font-size: 2rem; }
+  .activity h2 {
+    font-size: 1.6rem;
+    font-weight: lighter; }
+
+.header {
+  background: #fe5722;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%; }
+
+.header-item {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.4rem; }
+
+.home:after {
+  content: "";
+  background: #fe5722;
+  position: absolute;
+  z-index: -1;
+  width: 140%;
+  height: 20rem;
+  border-radius: 50%;
+  left: -18%;
+  top: 0; }
+
+
+/*# sourceMappingURL=main.css.map*/
