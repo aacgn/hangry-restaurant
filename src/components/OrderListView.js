@@ -20,8 +20,6 @@ export default class OrderListView extends React.Component {
 
         this.addOrderToCollapse = this.addOrderToCollapse.bind(this);
         this.changeStatus = this.changeStatus.bind(this);
-        this.orderIcon = this.orderIcon.bind(this);
-        this.color = this.color.bind(this);
     }
 
     componentDidMount() {
@@ -75,7 +73,6 @@ export default class OrderListView extends React.Component {
 
     render(){
         return (
-            this.state.meals.length > 0?
             <div className="order-list" style={{
                 borderBottomColor: this.color(),
                 borderBottomWidth: 3
@@ -138,7 +135,7 @@ export default class OrderListView extends React.Component {
                         </div>
                     </div>
                 </div>
-                </div>:<div><h2>Nenhum pedido encontrado.</h2></div>
+                </div>
         );
 
     }

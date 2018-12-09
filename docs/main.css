@@ -85,14 +85,14 @@ body {
       border-radius: 50%;
       width: 2.7rem;
       height: 2.7rem; }
-  .activity__section {
+  .activity__section .margged-y {
     margin-top: 5rem; }
-    .activity__section .padded {
-      padding: 1.2rem; }
-    .activity__section .padded-x {
-      padding: 0 1.2rem; }
-    .activity__section .padded-y {
-      padding: 1.2rem 0; }
+  .activity__section .padded {
+    padding: 1.2rem; }
+  .activity__section .padded-x {
+    padding: 0 1.2rem; }
+  .activity__section .padded-y {
+    padding: 1.2rem 0; }
   .activity h1 {
     font-size: 1.5rem; }
   .activity h2 {
@@ -207,6 +207,36 @@ body {
   .meal-list__price {
     color: #12b312;
     font-size: 1rem; }
+
+.status-card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  border-radius: 11px;
+  text-align: center;
+  border: 1px solid #ccc;
+  color: black;
+  width: 5rem;
+  height: 5rem; }
+  .status-card__outer {
+    padding-right: 10px; }
+  .status-card .text {
+    font-size: .8rem;
+    margin: 2px 0; }
+  .status-card[active=true] {
+    border: 2px solid #fe5722 !important; }
+
+.home__checkout {
+  padding: 0 1.2rem;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: scroll; }
+  .home__checkout .checkout-card__outer:last-child {
+    padding-right: 1.2rem; }
+  .home__checkout::-webkit-scrollbar {
+    width: 0; }
+  .home__checkout::-webkit-scrollbar-thumb {
+    width: 0; }
 
 .home__order-list-view {
   display: flex;

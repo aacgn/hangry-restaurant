@@ -1,4 +1,25 @@
 .home {
+
+    &__checkout {
+        padding: 0 1.2rem; 
+        display: flex;
+        flex-flow: row nowrap;
+        overflow-x: scroll;
+
+        .checkout-card__outer:last-child {
+            padding-right: 1.2rem;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+         
+         
+        &::-webkit-scrollbar-thumb {
+            width: 0;
+        }
+    }
+    
     &__order-list-view {
         display: flex;
         flex-flow: column nowrap;

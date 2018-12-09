@@ -40,7 +40,10 @@ body {
     }
 
     &__section {
-        margin-top: 5rem;
+
+        .margged-y{
+            margin-top: 5rem;
+        }
 
         .padded {
             padding: 1.2rem;

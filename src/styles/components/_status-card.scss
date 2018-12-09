@@ -1,0 +1,25 @@
+.status-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    border-radius: 11px;
+    text-align: center;
+    border: 1px solid #ccc;
+    color: black;
+    width: 5rem;
+    height: 5rem;
+
+    &__outer {
+        padding-right: 10px;
+    }
+
+    .text {
+        font-size: .8rem;
+        margin: 2px 0;
+    }
+
+    &[active=true] {
+        border: 2px solid $primary !important;
+    }
+
+}
