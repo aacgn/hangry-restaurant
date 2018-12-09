@@ -6,6 +6,7 @@ import { faBan } from '@fortawesome/free-solid-svg-icons';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 export default class StatusCard extends React.Component {
     constructor(props) {
@@ -28,6 +29,8 @@ export default class StatusCard extends React.Component {
                 return <FontAwesomeIcon icon={faBan} />;
             case 'Pronto':
                 return <FontAwesomeIcon icon={faCheckCircle} />;
+            case 'Entregue':
+                return <FontAwesomeIcon icon={faShoppingBag} />;
             default:
                 return <FontAwesomeIcon icon={faQuestion} />;
         }
