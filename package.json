@@ -1,5 +1,5 @@
 {
-  "name": "hangry-web",
+  "name": "hangry-restaurant",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -39,12 +39,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sugarbrain/hangry-web.git"
+    "url": "git+https://github.com/sugarbrain/hangry-restaurant.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sugarbrain/hangry-web/issues"
+    "url": "https://github.com/sugarbrain/hangry-restaurant/issues"
   },
-  "homepage": "https://github.com/sugarbrain/hangry-web#readme"
+  "homepage": "https://github.com/sugarbrain/hangry-restaurant#readme"
 }
