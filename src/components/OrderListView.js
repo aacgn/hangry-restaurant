@@ -133,6 +133,9 @@ export default class OrderListView extends React.Component {
                         <div className="order-list__btn" onClick={() => this.changeStatus('Pronto')}>
                             Pronto
                         </div>
+                        <div className="order-list__btn" onClick={() => this.changeStatus('Retirado')}>
+                            Retirado
+                        </div>
                     </div>
                 </div>
                 </div>

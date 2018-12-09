@@ -29,7 +29,7 @@ export default class StatusCard extends React.Component {
                 return <FontAwesomeIcon icon={faBan} />;
             case 'Pronto':
                 return <FontAwesomeIcon icon={faCheckCircle} />;
-            case 'Entregue':
+            case 'Retirado':
                 return <FontAwesomeIcon icon={faShoppingBag} />;
             default:
                 return <FontAwesomeIcon icon={faQuestion} />;
