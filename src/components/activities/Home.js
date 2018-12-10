@@ -16,8 +16,8 @@ export default class Home extends Component {
         {id: 1, name: "Pedido"}, 
         {id: 2, name: "Em preparo"}, 
         {id: 3, name: "Pronto"}, 
-        {id: 4, name: "Cancelado"},
-        {id: 5, name: "Retirado"}
+        {id: 4, name: "Retirado"},
+        {id: 5, name: "Cancelado"}
       ]
     };
     this.addOrderToCollapse = this.addOrderToCollapse.bind(this);

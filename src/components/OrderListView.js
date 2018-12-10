@@ -8,6 +8,7 @@ import { faBan } from '@fortawesome/free-solid-svg-icons';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import MealListView from './MealListView.js';
 import { Link } from 'react-router-dom';
 
@@ -52,6 +53,8 @@ export default class OrderListView extends React.Component {
                 return <FontAwesomeIcon icon={faBan} />;
             case 'Pronto':
                 return <FontAwesomeIcon icon={faCheckCircle} />;
+            case 'Retirado':
+                return <FontAwesomeIcon icon={faShoppingBag} />;
             default:
                 return <FontAwesomeIcon icon={faQuestion} />;
         }
