@@ -76,6 +76,12 @@
         padding: 10px;
         font-weight: normal;
         cursor: pointer;
+        border: 1px solid $primary;
+
+        &:hover {
+            background: #f05437;
+            color: white;
+        }
     }
 
     &__angle {

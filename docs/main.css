@@ -174,7 +174,11 @@ body {
     border-radius: 6px;
     padding: 10px;
     font-weight: normal;
-    cursor: pointer; }
+    cursor: pointer;
+    border: 1px solid #fe5722; }
+    .order-list__btn:hover {
+      background: #f05437;
+      color: white; }
   .order-list__angle {
     font-size: 1.4rem; }
   .order-list__content {
@@ -228,6 +232,49 @@ body {
     margin: 2px 0; }
   .status-card[active=true] {
     border: 2px solid #fe5722 !important; }
+
+.order-items {
+  margin-top: 10px; }
+  .order-items__list {
+    display: flex;
+    flex-flow: column nowrap;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0px; }
+  .order-items__sumup {
+    padding: 10px 5px; }
+    .order-items__sumup .discount {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      font-size: .7rem; }
+      .order-items__sumup .discount .rate {
+        font-weight: .7rem; }
+    .order-items__sumup .total {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      margin-top: 10px; }
+      .order-items__sumup .total .price {
+        color: #12b312; }
+  .order-items__item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: .8rem;
+    align-items: center; }
+    .order-items__item .name {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center; }
+      .order-items__item .name img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        border-radius: 3px; }
+    .order-items__item .price {
+      font-weight: lighter; }
 
 .home__checkout {
   padding: 0 1.2rem;

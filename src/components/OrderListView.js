@@ -11,6 +11,7 @@ import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import MealListView from './MealListView.js';
 import { Link } from 'react-router-dom';
+import OrderItems from './OrderItems.js';
 
 export default class OrderListView extends React.Component {
     constructor(props) {
@@ -115,17 +116,9 @@ export default class OrderListView extends React.Component {
                     </div>  
                 </div>
                 <div className="order-list__content" active={this.props.active.toString()}>
-                    {
-                        this.state.meals.map(meal => {
-                            return <MealListView key={meal._id}
-                                                id={meal._id}
-                                                name={meal.name} 
-                                                description={meal.description} 
-                                                price={meal.price} 
-                                                url={meal.image_url}
-                                                />
-                        })
-                    }
+                    <OrderItems items={this.state.meals} 
+                          totalPrice={this.props.total_price} 
+                          discount={this.props.multiplier} />
                     <div className="order-list__action">
                         <div className="order-list__btn" onClick={() => this.changeStatus('Cancelado')}>
                                 Cancelar
