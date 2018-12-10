@@ -28,6 +28,9 @@ class App extends Component {
         <meta name="theme-color" content="#fe5722"></meta>
         <HashRouter>
           <Switch>
+          <Route path="/" render={
+              props => <HomeActivity store={this.state} store={this.state} setStore={s => this.setStore(s)} {...props} />} 
+            />
             <Route path="/:id" render={
               props => <HomeActivity store={this.state} store={this.state} setStore={s => this.setStore(s)} {...props} />} 
             />
