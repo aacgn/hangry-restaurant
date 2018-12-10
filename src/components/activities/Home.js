@@ -179,6 +179,10 @@ export default class Home extends Component {
             <h1 className="padded">pedidos</h1>
             <div className="home__order-list-view padded-x">
             {
+              this.props.store.data.orders.length == 0?
+              <div><h3>Nenhum pedido encontrado!</h3></div>:<div></div>
+            }
+            {
               this.props.store.data.orders.map(order => {
                 return <OrderListView key={order._id}
                                         id={order._id}

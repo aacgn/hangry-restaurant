@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { HashRouter, Switch, Route, FadeIn } from 'react-router-dom';
 import HomeActivity from './activities/Home';
+import Splash from './activities/Splash';
 import '../styles/index.scss';
 
 class App extends Component {
@@ -28,10 +29,11 @@ class App extends Component {
         <meta name="theme-color" content="#fe5722"></meta>
         <HashRouter>
           <Switch>
-          <Route path="/" render={
+          <Route exact={true} path="/" render={ props =>  <Splash {...props} /> } />
+          <Route path="/home" render={
               props => <HomeActivity store={this.state} store={this.state} setStore={s => this.setStore(s)} {...props} />} 
             />
-            <Route path="/:id" render={
+            <Route path="/home/:id" render={
               props => <HomeActivity store={this.state} store={this.state} setStore={s => this.setStore(s)} {...props} />} 
             />
           </Switch>
